@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+class NoteView extends StatelessWidget {
+  const NoteView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +51,7 @@ class NoteComponent extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
       width: double.infinity,
-      height: 220,
+      height: 215,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
         color: color ?? Colors.blue.shade200,
