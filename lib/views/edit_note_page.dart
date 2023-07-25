@@ -23,7 +23,7 @@ class EditNotePage extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
           child: CustomTextField(
             hintText: 'Contact',
-            hightOfTextFiled: 60,
+            maxLine: 4,
           ),
         )
       ]),

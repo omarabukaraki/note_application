@@ -18,14 +18,14 @@ class AddNotePage extends StatelessWidget {
           const Padding(
               padding: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
               child: CustomTextField(
-                hightOfTextFiled: 60,
+                maxLine: 4,
                 hintText: 'Content',
               )),
           CustomAddNoteButton(
             onTap: () {},
           ),
           const SizedBox(
-            height: 10,
+            height: 200,
           ),
         ],
       ),
