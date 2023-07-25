@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../component/add_note_page.dart';
+import '../component/custom_app_bar.dart';
 import '../component/note_list_view.dart';
 
 class NoteView extends StatelessWidget {
@@ -8,19 +9,7 @@ class NoteView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        elevation: 0,
-        title: const Text('Notes'),
-        actions: [
-          Container(
-              margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(18),
-                  color: Colors.grey.shade800),
-              child:
-                  IconButton(onPressed: () {}, icon: const Icon(Icons.search))),
-        ],
-      ),
+      appBar: CustomAppBar(),
       body: const NotesViewBody(),
       floatingActionButton: const CustomFloatingActionButton(),
     );
