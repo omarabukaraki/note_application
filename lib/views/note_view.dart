@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../component/add_note_button.dart';
+import '../component/add_note_page.dart';
 import '../component/note_list_view.dart';
 
 class NoteView extends StatelessWidget {
@@ -37,11 +37,11 @@ class CustomFloatingActionButton extends StatelessWidget {
     return FloatingActionButton(
       onPressed: () {
         showModalBottomSheet(
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+          shape: const RoundedRectangleBorder(
+              borderRadius: BorderRadius.vertical(top: Radius.circular(16))),
           context: context,
           builder: (context) {
-            return const AddNoteButton();
+            return const AddNotePage();
           },
         );
       },
