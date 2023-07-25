@@ -11,11 +11,11 @@ class AddNotePage extends StatelessWidget {
     return Column(
       children: [
         const Padding(
-          padding: EdgeInsets.only(top: 30, left: 8, right: 8, bottom: 8),
+          padding: EdgeInsets.only(top: 30, left: 16, right: 16, bottom: 8),
           child: CustomTextField(),
         ),
         const Padding(
-            padding: EdgeInsets.all(8.0),
+            padding: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
             child: CustomTextField(
               hightOfTextFiled: 60,
               hintText: 'Content',

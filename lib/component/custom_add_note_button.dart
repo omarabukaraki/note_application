@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../constant.dart';
+
 class CustomAddNoteButton extends StatelessWidget {
   const CustomAddNoteButton({super.key, this.onTap});
   final VoidCallback? onTap;
@@ -8,12 +10,11 @@ class CustomAddNoteButton extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        margin: const EdgeInsets.all(8),
+        margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
         width: double.infinity,
         height: 60,
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(4),
-            color: Colors.blue.shade200),
+            borderRadius: BorderRadius.circular(4), color: KprimaryColor),
         child: const Center(
             child: Text(
           'Add',

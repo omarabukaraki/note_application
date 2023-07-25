@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:note_app/constant.dart';
 
 class CustomTextField extends StatelessWidget {
   const CustomTextField({super.key, this.hintText, this.hightOfTextFiled});
@@ -7,12 +8,18 @@ class CustomTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextField(
+      cursorColor: KprimaryColor,
       decoration: InputDecoration(
           contentPadding: EdgeInsets.symmetric(
               vertical: hightOfTextFiled ?? 20, horizontal: 12),
           hintText: hintText ?? 'Title',
-          hintStyle: TextStyle(color: Colors.blue.shade200),
-          border: const OutlineInputBorder()),
+          hintStyle: TextStyle(color: KprimaryColor),
+          enabledBorder: buildBorder(color: Colors.white),
+          focusedBorder: buildBorder(color: KprimaryColor)),
     );
+  }
+
+  OutlineInputBorder buildBorder({required color}) {
+    return OutlineInputBorder(borderSide: BorderSide(color: color));
   }
 }

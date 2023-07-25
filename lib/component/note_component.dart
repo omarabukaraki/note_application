@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../constant.dart';
+
 // ignore: must_be_immutable
 class NoteComponent extends StatelessWidget {
   const NoteComponent({super.key, this.color});
@@ -12,7 +14,7 @@ class NoteComponent extends StatelessWidget {
       height: 215,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
-        color: color ?? Colors.blue.shade200,
+        color: color ?? KprimaryColor,
       ),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
