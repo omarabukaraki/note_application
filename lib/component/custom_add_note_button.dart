@@ -14,7 +14,7 @@ class CustomAddNoteButton extends StatelessWidget {
         width: double.infinity,
         height: 60,
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(16), color: KprimaryColor),
+            borderRadius: BorderRadius.circular(16), color: kPrimaryColor),
         child: const Center(
             child: Text(
           'Add',

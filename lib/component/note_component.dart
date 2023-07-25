@@ -17,7 +17,7 @@ class NoteComponent extends StatelessWidget {
         height: 215,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
-          color: color ?? KprimaryColor,
+          color: color ?? kPrimaryColor,
         ),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),

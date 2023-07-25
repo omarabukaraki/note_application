@@ -9,14 +9,14 @@ class CustomTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextField(
       maxLines: maxLine,
-      cursorColor: KprimaryColor,
+      cursorColor: kPrimaryColor,
       decoration: InputDecoration(
           // contentPadding: EdgeInsets.symmetric(
           //     vertical: hightOfTextFiled ?? 20, horizontal: 12),
           hintText: hintText ?? 'Title',
-          hintStyle: TextStyle(color: KprimaryColor),
+          hintStyle: TextStyle(color: kPrimaryColor),
           enabledBorder: buildBorder(color: Colors.white),
-          focusedBorder: buildBorder(color: KprimaryColor)),
+          focusedBorder: buildBorder(color: kPrimaryColor)),
     );
   }
 
