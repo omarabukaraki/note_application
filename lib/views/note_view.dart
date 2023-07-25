@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:note_app/views/note_details_view.dart';
-
-import '../component/note_component.dart';
 import '../component/note_list_view.dart';
 
 class NoteView extends StatelessWidget {

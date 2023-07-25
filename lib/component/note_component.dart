@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
 class NoteComponent extends StatelessWidget {
-  NoteComponent({super.key, this.color});
-  Color? color;
+  const NoteComponent({super.key, this.color});
+  final Color? color;
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 8),
+      margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
       width: double.infinity,
       height: 215,
       decoration: BoxDecoration(
@@ -28,7 +28,7 @@ class NoteComponent extends StatelessWidget {
                         child: Text(
                       'Flutter tips',
                       overflow: TextOverflow.ellipsis,
-                      style: TextStyle(fontSize: 30, color: Colors.black),
+                      style: TextStyle(fontSize: 28, color: Colors.black),
                     )),
                     Expanded(
                         flex: 2,
@@ -37,7 +37,7 @@ class NoteComponent extends StatelessWidget {
                           overflow: TextOverflow.ellipsis,
                           maxLines: 3,
                           style: TextStyle(
-                              fontSize: 22, color: Colors.grey.shade800),
+                              fontSize: 18, color: Colors.grey.shade800),
                         )),
                   ],
                 ),

@@ -12,9 +12,7 @@ class NotesViewBody extends StatelessWidget {
     return ListView.builder(
       itemCount: 4,
       itemBuilder: (context, index) {
-        return NoteComponent(
-          color: Colors.orange.shade300,
-        );
+        return const NoteComponent();
       },
     );
   }
