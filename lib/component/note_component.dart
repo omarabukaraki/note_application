@@ -7,7 +7,7 @@ class NoteComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
+      margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 8),
       width: double.infinity,
       height: 215,
       decoration: BoxDecoration(
