@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:note_app/views/note_details_view.dart';
 
 import '../component/note_component.dart';
 
@@ -18,7 +19,7 @@ class NoteView extends StatelessWidget {
                   borderRadius: BorderRadius.circular(18),
                   color: Colors.grey.shade800),
               child:
-                  IconButton(onPressed: () {}, icon: const Icon(Icons.search)))
+                  IconButton(onPressed: () {}, icon: const Icon(Icons.search))),
         ],
       ),
       body: ListView(
@@ -36,7 +37,14 @@ class NoteView extends StatelessWidget {
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          showModalBottomSheet(
+            context: context,
+            builder: (context) {
+              return NoteDetailsPage();
+            },
+          );
+        },
         backgroundColor: Colors.grey.shade800,
         child: const Icon(Icons.add),
       ),
