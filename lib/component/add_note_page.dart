@@ -8,22 +8,27 @@ class AddNotePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        const Padding(
-          padding: EdgeInsets.only(top: 30, left: 16, right: 16, bottom: 8),
-          child: CustomTextField(),
-        ),
-        const Padding(
-            padding: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
-            child: CustomTextField(
-              hightOfTextFiled: 60,
-              hintText: 'Content',
-            )),
-        CustomAddNoteButton(
-          onTap: () {},
-        )
-      ],
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          const Padding(
+            padding: EdgeInsets.only(top: 30, left: 16, right: 16, bottom: 8),
+            child: CustomTextField(),
+          ),
+          const Padding(
+              padding: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+              child: CustomTextField(
+                hightOfTextFiled: 60,
+                hintText: 'Content',
+              )),
+          CustomAddNoteButton(
+            onTap: () {},
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+        ],
+      ),
     );
   }
 }
