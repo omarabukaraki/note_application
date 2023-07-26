@@ -3,17 +3,6 @@ import 'package:flutter/material.dart';
 import 'custom_add_note_button.dart';
 import 'custom_text_field.dart';
 
-class AddNotePage extends StatelessWidget {
-  const AddNotePage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const SingleChildScrollView(
-      child: AddNoteForm(),
-    );
-  }
-}
-
 class AddNoteForm extends StatefulWidget {
   const AddNoteForm({
     super.key,
