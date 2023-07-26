@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../constant.dart';
+import '../../constant.dart';
 
 // ignore: must_be_immutable
 class NoteComponent extends StatelessWidget {

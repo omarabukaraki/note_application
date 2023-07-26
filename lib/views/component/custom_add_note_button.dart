@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../constant.dart';
+import '../../constant.dart';
 
 class CustomAddNoteButton extends StatelessWidget {
   const CustomAddNoteButton({super.key, this.onTap});
