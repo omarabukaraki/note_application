@@ -19,7 +19,6 @@ class _AddNoteFormState extends State<AddNoteForm> {
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
   GlobalKey<FormState> formKey = GlobalKey();
   String? title, subTitle;
-  NoteModel? noteModel;
 
   @override
   Widget build(BuildContext context) {
@@ -51,12 +50,12 @@ class _AddNoteFormState extends State<AddNoteForm> {
             onTap: () {
               if (formKey.currentState!.validate()) {
                 formKey.currentState!.save();
-                noteModel = NoteModel(
+                var noteModel = NoteModel(
                     title: title!,
                     subTitle: subTitle!,
-                    date: DateTime.now(),
-                    color: 1);
-                BlocProvider.of<AddNoteCubit>(context).addNote(noteModel!);
+                    date: DateTime.now().toString(),
+                    color: Colors.blue.value);
+                BlocProvider.of<AddNoteCubit>(context).addNote(noteModel);
               } else {
                 setState(() {});
                 autovalidateMode = AutovalidateMode.always;
