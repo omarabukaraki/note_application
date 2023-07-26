@@ -8,21 +8,61 @@ class AddNotePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
+    return const SingleChildScrollView(
+      child: AddNoteForm(),
+    );
+  }
+}
+
+class AddNoteForm extends StatefulWidget {
+  const AddNoteForm({
+    super.key,
+  });
+
+  @override
+  State<AddNoteForm> createState() => _AddNoteFormState();
+}
+
+class _AddNoteFormState extends State<AddNoteForm> {
+  AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
+  GlobalKey<FormState> formKey = GlobalKey();
+  String? title, subtitle;
+
+  @override
+  Widget build(BuildContext context) {
+    return Form(
+      key: formKey,
+      autovalidateMode: autovalidateMode,
       child: Column(
         children: [
-          const Padding(
-            padding: EdgeInsets.only(top: 30, left: 16, right: 16, bottom: 8),
-            child: CustomTextField(),
+          Padding(
+            padding:
+                const EdgeInsets.only(left: 16, right: 16, top: 30, bottom: 8),
+            child: CustomTextField(
+              onSaved: (value) {
+                title = value;
+              },
+            ),
           ),
-          const Padding(
-              padding: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
-              child: CustomTextField(
-                maxLine: 4,
-                hintText: 'Content',
-              )),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+            child: CustomTextField(
+              onSaved: (value) {
+                subtitle = value;
+              },
+              maxLine: 4,
+              hintText: 'Content',
+            ),
+          ),
           CustomAddNoteButton(
-            onTap: () {},
+            onTap: () {
+              if (formKey.currentState!.validate()) {
+                formKey.currentState!.save();
+              } else {
+                setState(() {});
+                autovalidateMode = AutovalidateMode.always;
+              }
+            },
           ),
           const SizedBox(
             height: 200,
