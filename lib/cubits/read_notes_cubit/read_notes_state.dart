@@ -5,6 +5,14 @@ abstract class ReadNotesState {}
 
 class ReadNotesInitial extends ReadNotesState {}
 
-class ReadNotesSuccess extends ReadNotesState {}
+class ReadNotesSuccess extends ReadNotesState {
+  final List<NoteModel> notes;
 
-class ReadNotesFailure extends ReadNotesState {}
+  ReadNotesSuccess(this.notes);
+}
+
+class ReadNotesFailure extends ReadNotesState {
+  final String errMessage;
+
+  ReadNotesFailure(this.errMessage);
+}
