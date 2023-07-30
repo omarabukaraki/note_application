@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:note_app/models/note_model.dart';
 
 import '../../constant.dart';
 
 // ignore: must_be_immutable
 class NoteComponent extends StatelessWidget {
-  const NoteComponent({super.key, this.color, this.onTap});
-  final Color? color;
+  const NoteComponent({
+    super.key,
+    this.onTap,
+    this.noteModel,
+  });
+
   final VoidCallback? onTap;
+  final NoteModel? noteModel;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -17,7 +23,7 @@ class NoteComponent extends StatelessWidget {
         height: 215,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
-          color: color ?? kPrimaryColor,
+          color: kPrimaryColor,
         ),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
@@ -29,16 +35,17 @@ class NoteComponent extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       // ListTile(),
-                      const Expanded(
+                      Expanded(
                           child: Text(
-                        'Flutter tips',
+                        noteModel!.title,
                         overflow: TextOverflow.ellipsis,
-                        style: TextStyle(fontSize: 28, color: Colors.black),
+                        style:
+                            const TextStyle(fontSize: 28, color: Colors.black),
                       )),
                       Expanded(
                           flex: 2,
                           child: Text(
-                            'build your career with Omar abu karaki',
+                            noteModel!.subTitle,
                             overflow: TextOverflow.ellipsis,
                             maxLines: 3,
                             style: TextStyle(
@@ -60,7 +67,7 @@ class NoteComponent extends StatelessWidget {
                     const Expanded(
                       child: SizedBox(),
                     ),
-                    Text('May 21,2022',
+                    Text(noteModel!.date,
                         style: TextStyle(
                             fontSize: 15, color: Colors.grey.shade700)),
                   ],

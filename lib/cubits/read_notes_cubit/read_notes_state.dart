@@ -10,9 +10,3 @@ class ReadNotesSuccess extends ReadNotesState {
 
   ReadNotesSuccess(this.notes);
 }
-
-class ReadNotesFailure extends ReadNotesState {
-  final String errMessage;
-
-  ReadNotesFailure(this.errMessage);
-}
