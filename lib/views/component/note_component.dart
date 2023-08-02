@@ -31,6 +31,7 @@ class NoteComponent extends StatelessWidget {
               // crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Expanded(
+                  flex: 2,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -54,23 +55,25 @@ class NoteComponent extends StatelessWidget {
                     ],
                   ),
                 ),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    const Expanded(
-                        child: Icon(
-                      Icons.delete,
-                      size: 32,
-                      color: Colors.black,
-                    )),
-                    const Expanded(
-                      child: SizedBox(),
-                    ),
-                    Text(noteModel!.date,
-                        style: TextStyle(
-                            fontSize: 15, color: Colors.grey.shade700)),
-                  ],
+                Expanded(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      const Expanded(
+                          child: Icon(
+                        Icons.delete,
+                        size: 32,
+                        color: Colors.black,
+                      )),
+                      const Expanded(
+                        child: SizedBox(),
+                      ),
+                      Text(noteModel!.date,
+                          style: TextStyle(
+                              fontSize: 15, color: Colors.grey.shade700)),
+                    ],
+                  ),
                 ),
               ]),
         ),
