@@ -1,29 +1,54 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:note_app/cubits/read_notes_cubit/read_notes_cubit.dart';
+import 'package:note_app/models/note_model.dart';
 import 'package:note_app/views/widget/custom_app_bar.dart';
 import 'package:note_app/views/widget/custom_text_field.dart';
 
-class EditNotePage extends StatelessWidget {
-  const EditNotePage({super.key});
+class EditNotePage extends StatefulWidget {
+  const EditNotePage({super.key, required this.note});
+  final NoteModel note;
 
   @override
+  State<EditNotePage> createState() => _EditNotePageState();
+}
+
+class _EditNotePageState extends State<EditNotePage> {
+  String? title, content;
+  @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       appBar: CustomAppBar(
+          onPressed: () {
+            widget.note.title = title ?? widget.note.title;
+            widget.note.subTitle = content ?? widget.note.subTitle;
+            widget.note.save();
+            BlocProvider.of<ReadNotesCubit>(context).fetchAllNotes();
+            Navigator.pop(context);
+          },
           text: 'Edit Note',
-          icon: Icon(
+          icon: const Icon(
             Icons.done,
             color: Colors.white,
           )),
       body: Column(children: [
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-          child: CustomTextField(),
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+          child: CustomTextField(
+            hintText: widget.note.title,
+            onChanged: (value) {
+              title = value;
+            },
+          ),
         ),
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
           child: CustomTextField(
-            hintText: 'Contact',
+            hintText: widget.note.subTitle,
             maxLine: 4,
+            onChanged: (value) {
+              content = value;
+            },
           ),
         )
       ]),

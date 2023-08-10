@@ -30,7 +30,6 @@ class _NotesViewBodyState extends State<NotesViewBody> {
         List<NoteModel> notes =
             BlocProvider.of<ReadNotesCubit>(context).notes ?? [];
         return ListView.builder(
-          reverse: true,
           itemCount: notes.length,
           itemBuilder: (context, index) {
             return NoteComponent(
@@ -38,7 +37,7 @@ class _NotesViewBodyState extends State<NotesViewBody> {
               onTap: () {
                 Navigator.push(context, MaterialPageRoute(
                   builder: (context) {
-                    return const EditNotePage();
+                    return EditNotePage(note: notes[index]);
                   },
                 ));
               },

@@ -3,10 +3,15 @@ import 'package:note_app/constant.dart';
 
 class CustomTextField extends StatelessWidget {
   const CustomTextField(
-      {this.onSaved, super.key, this.hintText, this.maxLine = 1});
+      {this.onSaved,
+      super.key,
+      this.hintText,
+      this.maxLine = 1,
+      this.onChanged});
   final String? hintText;
   final int? maxLine;
   final void Function(String?)? onSaved;
+  final void Function(String?)? onChanged;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
@@ -17,6 +22,7 @@ class CustomTextField extends StatelessWidget {
           return null;
         }
       },
+      onChanged: onChanged,
       onSaved: onSaved,
       maxLines: maxLine,
       cursorColor: kPrimaryColor,
