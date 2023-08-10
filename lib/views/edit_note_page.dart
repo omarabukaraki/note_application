@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:note_app/views/component/custom_app_bar.dart';
-import 'package:note_app/views/component/custom_text_field.dart';
+import 'package:note_app/views/widget/custom_app_bar.dart';
+import 'package:note_app/views/widget/custom_text_field.dart';
 
 class EditNotePage extends StatelessWidget {
   const EditNotePage({super.key});
