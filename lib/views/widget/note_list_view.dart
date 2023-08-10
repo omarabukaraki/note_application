@@ -30,6 +30,7 @@ class _NotesViewBodyState extends State<NotesViewBody> {
         List<NoteModel> notes =
             BlocProvider.of<ReadNotesCubit>(context).notes ?? [];
         return ListView.builder(
+          reverse: true,
           itemCount: notes.length,
           itemBuilder: (context, index) {
             return NoteComponent(

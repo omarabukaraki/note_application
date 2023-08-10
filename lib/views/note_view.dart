@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:note_app/cubits/read_notes_cubit/read_notes_cubit.dart';
 import 'widget/add_note_buttom_sheet.dart';
 import 'widget/custom_app_bar.dart';
 import 'widget/note_list_view.dart';
@@ -10,13 +8,10 @@ class NoteView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => ReadNotesCubit(),
-      child: const Scaffold(
-        appBar: CustomAppBar(),
-        body: NotesViewBody(),
-        floatingActionButton: CustomFloatingActionButton(),
-      ),
+    return const Scaffold(
+      appBar: CustomAppBar(),
+      body: NotesViewBody(),
+      floatingActionButton: CustomFloatingActionButton(),
     );
   }
 }
