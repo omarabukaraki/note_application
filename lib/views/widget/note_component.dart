@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hive/hive.dart';
 import 'package:note_app/models/note_model.dart';
 
 import '../../constant.dart';
@@ -60,12 +61,16 @@ class NoteComponent extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
-                      const Expanded(
-                          child: Icon(
-                        Icons.delete,
-                        size: 32,
-                        color: Colors.black,
-                      )),
+                      Expanded(
+                          child: IconButton(
+                              onPressed: () {
+                                noteModel?.delete();
+                              },
+                              icon: const Icon(
+                                Icons.delete,
+                                size: 32,
+                                color: Colors.black,
+                              ))),
                       const Expanded(
                         child: SizedBox(),
                       ),
