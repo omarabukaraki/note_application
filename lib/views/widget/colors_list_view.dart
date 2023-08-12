@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:note_app/cubits/add_note_cubit/add_note_cubit.dart';
 
 import '../../constant.dart';
 
@@ -12,7 +14,7 @@ class ColorItem extends StatelessWidget {
         ? CircleAvatar(
             radius: 40,
             backgroundColor: kPrimaryColor,
-            child: CircleAvatar(radius: 37, backgroundColor: color))
+            child: CircleAvatar(radius: 35, backgroundColor: color))
         : CircleAvatar(radius: 40, backgroundColor: color);
   }
 }
@@ -49,6 +51,7 @@ class _ColorListViewState extends State<ColorListView> {
             child: GestureDetector(
                 onTap: () {
                   currentIndex = index;
+                  BlocProvider.of<AddNoteCubit>(context).color = colors[index];
                   setState(() {});
                 },
                 child: ColorItem(

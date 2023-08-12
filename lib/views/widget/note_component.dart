@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:note_app/cubits/read_notes_cubit/read_notes_cubit.dart';
 import 'package:note_app/models/note_model.dart';
-import '../../constant.dart';
 
 class NoteComponent extends StatelessWidget {
   const NoteComponent({
@@ -23,7 +22,7 @@ class NoteComponent extends StatelessWidget {
         height: 215,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
-          color: kPrimaryColor,
+          color: Color(noteModel!.color),
         ),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
