@@ -47,7 +47,10 @@ class _AddNoteFormState extends State<AddNoteForm> {
               hintText: 'Content',
             ),
           ),
-          const ColorListView(),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+            child: ColorListView(),
+          ),
           BlocBuilder<AddNoteCubit, AddNoteState>(
             builder: (context, state) {
               return CustomAddNoteButton(
